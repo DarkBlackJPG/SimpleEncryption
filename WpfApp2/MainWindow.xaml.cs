@@ -345,17 +345,19 @@ namespace SimpleEncryption
         {
             try
             {
-                if (algorithmComboBox.SelectedIndex == -1 &&
-                    directionComboBox.SelectedIndex == -1 &&
-                    srcComboox.SelectedIndex == -1 &&
+                if (algorithmComboBox.SelectedIndex == -1 ||
+                    directionComboBox.SelectedIndex == -1 ||
+                    srcComboox.SelectedIndex == -1 ||
                     dstCombobox.SelectedIndex == -1)
                 {
                     throw new Exception("All options are not chosen!");
                 }
 
                 if (PasswordBox.Password == "")
-                    throw new Exception("Password not selected!");
+                    throw new Exception("Password not entered!");
 
+                if (PasswordBox.Password.Length < 6)
+                    throw new Exception("Password not 6 charachters long. Please write a longer password!");
 
                 dstText.Document.Blocks.Clear();
                 bool isDESAlgorithm = algorithmComboBox.SelectedIndex == 0;

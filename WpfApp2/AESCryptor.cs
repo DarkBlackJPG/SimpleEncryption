@@ -109,14 +109,14 @@ namespace SimpleEncryption
         {
             get
             {
-                if (Plaintext == null) throw new Exception("Nije inicijalizovano");
+                if (Plaintext == null) throw new Exception("Plaintext is not initialized");
                 return Plaintext;
             }
         }
         public byte[] EncryptedMessage
         {
             get {
-                if (Encryptedmessage == null) throw new Exception("Nije desifrovano nista");
+                if (Encryptedmessage == null) throw new Exception("Decryption failed");
                 return Encryptedmessage;
             }
         }
@@ -693,7 +693,7 @@ namespace SimpleEncryption
             if (Encryptedmessage == null)
             {
                 AddedBytes = Plaintext[1];
-                if (AddedBytes > 16) throw new Exception("Plaintext nije sifrovan");
+                if (AddedBytes > 16) throw new Exception("Plaintext is not encrypted with the adequate algorithm");
                 Encryptedmessage = Plaintext;
             } else { AddedBytes = Encryptedmessage[1]; }
             Plaintext = new byte[Encryptedmessage.Length - 2];
