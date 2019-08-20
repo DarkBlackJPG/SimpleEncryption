@@ -241,6 +241,8 @@ namespace SimpleEncryption
                 };
                 if (saveFileDialog.ShowDialog() == true)
                     File.WriteAllText(saveFileDialog.FileName, BitConverter.ToString(cryptor.CipherText));
+                else
+                    throw new Exception("Unfinished execution. Terminating proces");
             } else
             {
                 dstText.AppendText(BitConverter.ToString(cryptor.CipherText));
@@ -266,6 +268,8 @@ namespace SimpleEncryption
                 };
                 if (saveFileDialog.ShowDialog() == true)
                     File.WriteAllText(saveFileDialog.FileName, Encoding.Unicode.GetString(cryptor.InverseCipherText));
+                else
+                    throw new Exception("Unfinished execution. Terminating proces");
             }
             else
             {
@@ -293,6 +297,8 @@ namespace SimpleEncryption
                 };
                 if (saveFileDialog.ShowDialog() == true)
                     File.WriteAllText(saveFileDialog.FileName, BitConverter.ToString(cryptor.EncryptedMessage));
+                else
+                    throw new Exception("Unfinished execution. Terminating proces");
             }
             else
             {
@@ -318,6 +324,8 @@ namespace SimpleEncryption
                 };
                 if (saveFileDialog.ShowDialog() == true)
                     File.WriteAllText(saveFileDialog.FileName , Encoding.Unicode.GetString(cryptor.PlainText));
+                else
+                    throw new Exception("Unfinished execution. Terminating proces");
             }
             else
             {

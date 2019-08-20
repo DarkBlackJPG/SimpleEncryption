@@ -423,7 +423,7 @@ namespace SimpleEncryption
         public void DESDecrypt()
         {
             int numberOfAddedBytes = Convert.ToInt32(PlainText[0]);
-            if (numberOfAddedBytes > 8) throw new Exception("Fajl nije kriptovan");
+            if (numberOfAddedBytes > 8) throw new Exception("File is not encrypted!");
             byte[] tempe = new byte[PlainText.Length - 1];
             for (int k = 1; k < PlainText.Length; k+=8)
             {
